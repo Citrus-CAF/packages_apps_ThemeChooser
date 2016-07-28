@@ -37,7 +37,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-import cyanogenmod.providers.ThemesContract.ThemesColumns;
+import android.provider.ThemesContract.ThemesColumns;
 
 public class ChooserActivity extends FragmentActivity implements DrawerAdapter.DrawerClickListener {
     public static final String TAG = ChooserActivity.class.getName();

@@ -31,7 +31,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import cyanogenmod.providers.ThemesContract;
+import android.provider.ThemesContract;
 
 public class HeadersPreviewFragment extends Fragment {
     private static final String PKG_EXTRA = "pkg_extra";
