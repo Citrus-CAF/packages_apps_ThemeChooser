@@ -74,6 +74,8 @@ import org.cyanogenmod.theme.util.IconPreviewHelper;
 import org.cyanogenmod.theme.util.ThemedTypefaceHelper;
 import org.cyanogenmod.theme.util.Utils;
 
+import org.cyanogenmod.theme.chooser.Helpers; 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -164,33 +166,22 @@ public class ChooserBrowseFragment extends Fragment
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.get_more_themes) {
-            lauchGetThemes();
-        }
+        switch(item.getItemId()) {
+            case R.id.playstore_themes:
+                launchThemeStore();
+            break;
+            case R.id.restart_systemui:
+                Helpers.restartSystemUI();
+            return true;
+         }
+ 
+         return false;
+     }
 
-        return false;
-    }
-    private void lauchGetThemes() {
-        Context context = getActivity();
-        String playStoreUrl = context.getResources().getString(R.string.play_store_url);
-        String wikiUrl = context.getResources().getString(R.string.wiki_url);
-
+     private void launchThemeStore() {
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(playStoreUrl));
-
-        // Try to launch play store
-        if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-            context.startActivity(intent);
-        } else {
-            // If no play store, try to open wiki url
-            intent.setData(Uri.parse(wikiUrl));
-            if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                context.startActivity(intent);
-            } else {
-                Toast.makeText(getActivity(), R.string.get_more_app_not_available,
-                        Toast.LENGTH_LONG).show();
-            }
-        }
+        intent.setData(Uri.parse("market://search?q=cm13+themes&c=apps"));
+        startActivity(intent);
     }
 
     @Override

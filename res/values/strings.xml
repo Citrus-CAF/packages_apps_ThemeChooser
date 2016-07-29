@@ -65,4 +65,8 @@
     <string name="wiki_url" translatable="false">http://wiki.cyanogenmod.org/w/Themes</string>
 
     <string name="designed_for_cm11">Designed for CM11</string>
+    
+    <string name="menu_item_playstore_themes">Playstore Themes</string>
+    <string name="menu_item_restart_systemui">Restart SystemUI</string>
+ 
 </resources>

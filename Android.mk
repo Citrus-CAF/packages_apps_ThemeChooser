@@ -20,6 +20,5 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
 LOCAL_AAPT_FLAGS := \
     --auto-add-overlay \
     --extra-packages android.support.v7.cardview
->>>>>>> 1f5c627... ThemeChooser: update UI
 
 include $(BUILD_PACKAGE)
